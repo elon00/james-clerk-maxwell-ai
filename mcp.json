@@ -1,0 +1,56 @@
+{
+  "mcpServers": {
+    "james-clerk-maxwell-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "MAXWELL",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "solve_maxwell_wave_equations",
+          "description": "Solves coupled vector curl equations for electromagnetic radiation propagation in free space",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "permittivity": {
+                "type": "number"
+              },
+              "permeability": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "permittivity"
+            ]
+          }
+        },
+        {
+          "name": "compute_boltzmann_velocity_distribution",
+          "description": "Calculates statistical kinetic velocity profiles and Maxwell daemon thermodynamic entropy flux",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "temperature_kelvin": {
+                "type": "number"
+              },
+              "molar_mass_g": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "temperature_kelvin"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
